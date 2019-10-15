@@ -26,7 +26,7 @@
                 <td><span class="badge badge-primary rounded">{{ad.price}}</span></td>
                 <td>
                     <a href="{{path('admin_ads_edit', {'id': ad.id})}}" class="btn btn-primary"><is class="fas fa-edit"></is></a>
-                    <a href="{{path('admin_ads_delete', {'id': ad.id})}}" class="btn btn-danger"><is class="fas fa-trash"></is></a>
+                    <a href="{{path('admin_ads_delete', {'id': ad.id})}}" class="btn btn-danger" onclick="return confirm(`Voulez vous vraiment supprimer l'article : {{ad.title}} ?`)"><is class="fas fa-trash"></is></a>
                 </td>
             </tr>
             {% endfor %}
