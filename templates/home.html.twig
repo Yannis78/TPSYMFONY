@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %} {% block title %} Accueil {% endblock %} {% block header %}
+
+<h2>Voici le header</h2>
+
+{% endblock %} {% block body %}
+<div class="container">
+    <div class="jumbotron mt-3">
+        <h1 class="display-5">Bienvenue sur le TP Symfony de Yannis Kecir</h1>
+        <p class="lead">Vous pouvez maintenant, consulter, créer, modifier et supprimer un article</p>
+        <hr class="my-4">
+        <p>Accéder à la partie admin pour gérer les articles</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{{ path('admin_ads_index') }}" role="button" target="_blank">Accéder à la partie ADMIN</a>
+        </p>
+    </div>
+
+    
+
+</div>
+{% endblock %}

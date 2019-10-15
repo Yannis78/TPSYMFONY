@@ -1,0 +1,52 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %} Création d'un article {% endblock %}
+
+{% form_theme form 'ad/_collection.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="my-5">Créer un article</h1>
+
+        {{ form_start(form) }}
+
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-light border-dark">
+                    <h2>Information générales</h2>
+                    <hr>
+                    {{form_row(form.title)}}
+                    {{form_row(form.price)}}
+                </div>
+                <div class="alert alert-light border-dark">
+                    <h2>Détails de l'article</h2>
+                    <hr>
+                    {{form_row(form.content)}}
+                </div>
+            </div>
+            <div class="col">
+                <div class="alert alert-light border-dark">
+                    <h2>Images de l'article</h2>
+                    <hr>
+                    {{form_row(form.coverImage)}}
+                    {{form_row(form.images)}}
+                </div>
+            </div>
+        </div>
+            <div class="alert alert-dark clearfix">
+            <h2 class="alert-heading mb-3">Sauvegarder l'artcile</h2>
+                <button type="submit" class="btn btn-primary">
+                <i class="fas fa-check"></i> &nbsp;
+                Créer l'article
+                </button>
+                <a class="btn btn-danger" href="{{ path('admin_ads_index') }}" role="button"> <i class="fas fa-arrow-left"></i> &nbsp; Annuler</a>
+            </div>
+
+        
+        {{ form_end(form) }}
+    </div> 
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/js/ad.js"></script>
+{% endblock %}
